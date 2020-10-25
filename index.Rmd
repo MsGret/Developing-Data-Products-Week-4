@@ -1,0 +1,58 @@
+---
+title: "BMI App"
+author: "MsGret"
+date: "October 25, 2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## About the Course Project
+
+This Project is a part of Developing Data Products course (Coursera Data Science Specialization).
+
+Instructions:
+
+1. Write a shiny application with associated supporting documentation. The documentation should be thought of as whatever a user will need to get started using your application.
+2. Deploy the application on Rstudio's shiny server
+3. Share the application link by pasting it into the provided text box
+4. Share your server.R and ui.R code on github
+
+## About BMI
+
+Body mass index (BMI) is a value derived from the mass (weight) and height of a person. BMIs under 20 and over 25 have been associated with higher all-causes mortality, with the risk increasing with distance from the 20-25 range. Code bellow shows how you can calculate BMIs
+
+
+```{r echo=TRUE}
+weight <- 60 # weight in kg
+height <- 165 # height in cm
+
+BMI <- weight / (height / 100) ^ 2
+BMI
+```
+
+## New BMI and BMI Prime
+
+A new formula for computing Body Mass Index that accounts for the distortions of the traditional BMI formula for shorter and taller individuals has been proposed by Nick Trefethen, Professor of numerical analysis at the University of Oxford.
+
+```{r echo=TRUE}
+BMInew <- 1.3 * weight / (height / 100) ^ 2.5
+BMInew
+```
+
+BMI prime is the ratio of actual BMI to upper limit optimal BMI (currently defined at 25):
+
+```{r echo=TRUE}
+BMIprime <- BMI / 25
+BMIprime
+```
+
+## Links
+
+- The BMI calculator link: [Shiny App](https://msgret.shinyapps.io/bmiapp/)
+- Link for GitHub repo with ui.R and server.R code: [GitHub repo](https://github.com/MsGret/Developing-Data-Products-Week-4)
+
+
+
